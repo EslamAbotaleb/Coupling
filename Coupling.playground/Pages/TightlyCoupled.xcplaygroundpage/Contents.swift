@@ -4,8 +4,8 @@ import Foundation
 
 //MARK: - Tightly Coupled
 
-/// PaymentService Module
-public class PaymentService {
+/// StripePaymentService Module
+public class StripePaymentService {
 
     public init() {}
 
@@ -16,6 +16,29 @@ public class PaymentService {
         print("Refunding payment of \(amount) dollars.")
     }
 }
+public class MondiaMediaPaymentService {
+
+    public init() {}
+
+    public func processPayment(amount: Double) {
+        print("Processing payment of \(amount) dollars.")
+    }
+    public func refundPayment(amount: Double) {
+        print("Refunding payment of \(amount) dollars.")
+    }
+}
+public class PayfortPaymentService {
+
+    public init() {}
+
+    public func processPayment(amount: Double) {
+        print("Processing payment of \(amount) dollars.")
+    }
+    public func refundPayment(amount: Double) {
+        print("Refunding payment of \(amount) dollars.")
+    }
+}
+
 /// EmailService Module
 public class EmailService {
     public init() {}
@@ -28,8 +51,8 @@ public class EmailService {
 /// UserService Module
 public class UserService {
 
-    //MARK: - call direct concurrent implementation class for PaymentService
-    private var paymentService: PaymentService
+    //MARK: - call direct concurrent implementation class for StripePaymentService
+    private var paymentService: StripePaymentService
     //MARK: - call direct concurrent implementation class for EmailService
     private var emailService: EmailService
 

@@ -8,15 +8,18 @@
 /// IOC responsible for control instantiate  object
 
 class UserService {
+
+    //MARK: - 
     //MARK: - Define property as injection protocol instead of pass direct concurrent implementation class
     private var paymentService: PaymentService
-
+    
     // Injected via constructor
+    /// inject protoc lwwithout concrete implment
     init(paymentService: PaymentService) {
         self.paymentService = paymentService
     }
 
-    func createUser() {
+    func displayPayment() {
         paymentService.processPayment()  // Using the injected PaymentService
     }
 }

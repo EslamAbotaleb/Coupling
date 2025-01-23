@@ -5,7 +5,7 @@
 //  Created by Eslam on 20/01/2025.
 //
 
-/*
+
 // MARK: - Step two from IOC Into Dependency Injection using constructor injection
 /// DI follow IOC
 
@@ -18,7 +18,12 @@ class PaymentServiceImpl: PaymentService {
         print("Payment processed!")
     }
 }
+public class MondiaMediaPaymentService: PaymentService {
+    func processPayment() {
 
+    }
+
+}
 // 2. Inject PaymentService into UserService via constructor (DI)
 class UserService {
     private var paymentService: PaymentService
@@ -27,13 +32,12 @@ class UserService {
     init(paymentService: PaymentService) {
         self.paymentService = paymentService
     }
-
-    func createUser() {
-        paymentService.processPayment()  // Using injected PaymentService
+    func displayPayment() {
+        paymentService.processPayment()
     }
 }
 
 // 3. Inject dependency when creating UserService instance
 let paymentService = PaymentServiceImpl()
 let userService = UserService(paymentService: paymentService)
-*/
+

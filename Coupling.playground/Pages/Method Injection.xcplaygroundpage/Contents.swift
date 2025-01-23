@@ -6,12 +6,12 @@
 //
 // MARK: - Step three from IOC Into Dependency Injection using method injection
 
-/*
+
  protocol PaymentService {
      func processPayment()
  }
 
- class PaymentServiceImpl: PaymentService {
+ class PaypalPaymentServiceImpl: PaymentService {
      func processPayment() {
          print("Payment processed!")
      }
@@ -25,11 +25,12 @@
  }
 
  // 1. Create the PaymentService instance
- let paymentService = PaymentServiceImpl()
+ let paypalpaymentService = PaypalPaymentServiceImpl()
+let StripepaymentService = StripPaymentServiceImpl()
 
  // 2. Create the UserService instance
  let userService = UserService()
 
  // 3. Inject the PaymentService dependency at the method level
- userService.createUser(paymentService: paymentService)  // This will print "Payment processed!"
- */
+ userService.displayPayment(paymentService: StripepaymentService)  // This will print "Payment processed!"
+

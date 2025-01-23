@@ -34,11 +34,13 @@ class UserService {
         self.paymentService = paymentService
     }
 
-    func createUser() {
+    func displayProcessPayment() {
         paymentService.processPayment()
     }
 }
 
-// 4. Inject dependency (via DIP) when creating UserService
-let paymentService = StripePaymentService()  // Could easily swap with PaypalPaymentService
-let userService = UserService(paymentService: paymentService)
+//// 4. Inject dependency (via DIP) when creating UserService
+//let paymentService = StripePaymentService()  // Could easily swap with PaypalPaymentService
+//let userService = UserService(paymentService: paymentService)
+let paypal = PaypalPaymentService()
+let userService = UserService(paymentService: paypal)

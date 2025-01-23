@@ -9,7 +9,7 @@ import Foundation
 //  Created by Eslam on 20/01/2025.
 //
 //MARK: - Achieve Loosely Coupling
-/*
+
 /// Abstract Model
 protocol PaymentService {
     func processPayment()
@@ -43,13 +43,13 @@ class UserService {
         self.paymentService = paymentService
     }
 
-    func createUser() {
+    func displayPayment() {
         paymentService.processPayment()
     }
 }
 
 // Client code
-let paymentService = PaymentServiceImpl()  // Can easily switch to another implementation
-let userService = UserService(paymentService: paymentService)
-userService.createUser()  // Calls method on the injected PaymentService
-*/
+let StripeServiceImplemenation = StripeServiceImplemenation()  // Can easily switch to another implementation
+let userService = UserService(paymentService: StripeServiceImplemenation)
+userService.displayPayment()  // Calls method on the injected PaymentService
+
